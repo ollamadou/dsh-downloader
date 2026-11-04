@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Robust Downloader",
+    "description": "Resumable, multi-connection downloads with retries, China mirror/proxy presets, and DeepSeek-assisted resource discovery."
+  }
+}

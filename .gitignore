@@ -1,0 +1,9 @@
+node_modules/
+downloads/
+data/
+*.part
+*.dshdl.json
+*.tmp
+npm-debug.log*
+.DS_Store
+Thumbs.db

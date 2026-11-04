@@ -1,0 +1,18 @@
+- insert:
+    - id: dsh-downloader
+      name: 'dsh-downloader'
+      # All fields are optional; the plugin merges these over its own defaults.
+      config:
+        downloadDir: ''
+        maxConnections: 8
+        initialConnections: 2
+        maxRetries: 4
+        proxyMode: auto
+        proxyUrl: ''
+        useLlmDiscovery: true
+        deepseek:
+          apiKey: ''
+          baseUrl: 'https://api.deepseek.com'
+          model: 'deepseek-chat'
+        # Set to true to wake the conversation when a background download ends.
+        notifyOnComplete: false

@@ -1,0 +1,60 @@
+{
+  "name": "dsh-downloader",
+  "version": "0.1.0",
+  "description": "Resumable multi-connection downloader with China mirror and proxy presets, plus DeepSeek-assisted resource discovery for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "author": "ollamadou <173069520@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ollamadou/dsh-downloader.git"
+  },
+  "homepage": "https://github.com/ollamadou/dsh-downloader#readme",
+  "bugs": {
+    "url": "https://github.com/ollamadou/dsh-downloader/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "deepseek-harness",
+    "downloader",
+    "resume-download",
+    "china-mirror"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "lib/*.js",
+    "locale/*.json",
+    "icon.svg",
+    "assets/icon-180.png",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "icon": "assets/icon-180.png",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  }
+}
