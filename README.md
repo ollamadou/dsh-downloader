@@ -3,7 +3,7 @@
 `dsh-downloader` 是一个面向 DeepSeek Harness（DSH）的下载插件：断点续传、多路合并、超时重试、国内镜像/代理预置、DeepSeek 资源发现、定时进度反馈，以及可沉淀的问题日志与主机调优。
 
 - GitHub：`https://github.com/ollamadou/dsh-downloader`
-- npm：`dsh-downloader`
+- npm：`dsh-downloader`（包名预留；未发布 npm 时使用 GitHub Release 的 `.tgz`）
 - 插件目录：`E:\harness\downloader`
 - 本地开发环境已安装到 desktop profile，并默认启用
 - 数据目录：`C:\Users\<你>\.dsh\data\dsh-downloader`（默认；可用配置覆盖）
