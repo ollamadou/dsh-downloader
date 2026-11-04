@@ -9,6 +9,8 @@ This file is for the repository owner. It is not shipped in the npm package.
 - npm package: `dsh-downloader`
 - Market category: `tools`
 - Market entry file: `data/plugins/ollamadou__dsh-downloader.yml`
+- Submitted PR: `https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11886`
+- Release: `https://github.com/ollamadou/dsh-downloader/releases/tag/v0.1.0`
 
 ## 1. Create the GitHub repository
 
