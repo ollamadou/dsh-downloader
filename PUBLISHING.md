@@ -12,6 +12,8 @@ This file is for the repository owner. It is not shipped in the npm package.
 - Submitted PR: `https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11886`
 - Release: `https://github.com/ollamadou/dsh-downloader/releases/tag/v0.1.0`
 
+The repository was created on 2026-11-04; the market requires a repository at least one day old. A gate run before that window may fail only on age. The upstream `regate.yml` workflow re-checks open submissions every six hours, so the PR can remain open and be re-gated after 24 hours.
+
 ## 1. Create the GitHub repository
 
 ```powershell
