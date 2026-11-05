@@ -481,7 +481,7 @@ function sameOrigin(req) {
 function registerWebRoutes(ctx, webServer, manager) {
   const stateRoute = {
     kind: 'exact',
-    path: '/dsh-downloader/state',
+    path: '/dshdownloader/state',
     async handler(req, res) {
       if (req.method !== 'GET') return sendJson(res, 405, { ok: false, error: 'method not allowed' })
       try {
@@ -493,7 +493,7 @@ function registerWebRoutes(ctx, webServer, manager) {
   }
   const actionRoute = {
     kind: 'exact',
-    path: '/dsh-downloader/action',
+    path: '/dshdownloader/action',
     async handler(req, res) {
       if (req.method !== 'POST') return sendJson(res, 405, { ok: false, error: 'method not allowed' })
       if (!sameOrigin(req)) return sendJson(res, 403, { ok: false, error: 'cross-origin request rejected' })
@@ -538,7 +538,7 @@ export async function apply(ctx, rawConfig = {}) {
   if (systemPrompt) {
     ctx.effect(() =>
       systemPrompt.section({
-        name: 'dsh-downloader',
+        name: 'dshdownloader',
         order: 935,
         text: [
           '## Downloads and large files',
@@ -556,12 +556,12 @@ export async function apply(ctx, rawConfig = {}) {
     try {
       registerWebRoutes(ctx, webServer, manager)
     } catch (error) {
-      ctx.logger?.warn?.(`[dsh-downloader] Web 面板路由注册失败: ${errorText(error)}`)
+      ctx.logger?.warn?.(`[dshdownloader] Web 面板路由注册失败: ${errorText(error)}`)
     }
   }
 
   ctx.logger?.info?.(
-    `[dsh-downloader] 已启用：${BUILTIN_SOURCES.length} 个镜像站点、${BUILTIN_PROXIES.length} 个代理预置；数据目录 ${store.dataDir}；DeepSeek ${deepseekConfig(config).apiKey ? '已配置' : '未配置'}。`,
+    `[dshdownloader] 已启用：${BUILTIN_SOURCES.length} 个镜像站点、${BUILTIN_PROXIES.length} 个代理预置；数据目录 ${store.dataDir}；DeepSeek ${deepseekConfig(config).apiKey ? '已配置' : '未配置'}。`,
   )
 }
 

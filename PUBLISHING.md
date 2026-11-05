@@ -6,7 +6,7 @@ This file is for the repository owner. It is not shipped in the npm package.
 
 - GitHub: `ollamadou`
 - Repository: `https://github.com/ollamadou/dsh-downloader`
-- npm package: `dsh-downloader`
+- npm package: `dshdownloader`
 - Market category: `tools`
 - Market entry file: `data/plugins/ollamadou__dsh-downloader.yml`
 - Submitted PR: `https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11886`
@@ -20,7 +20,7 @@ The repository was created on 2026-11-04; the market requires a repository at le
 cd E:\harness\downloader
 git init
 git add .
-git commit -m "feat: initial dsh-downloader"
+git commit -m "feat: initial dshdownloader"
 git branch -M main
 git remote add origin https://github.com/ollamadou/dsh-downloader.git
 git push -u origin main
@@ -62,11 +62,11 @@ Do not edit the generated READMEs or any other entry.
 ```powershell
 git clone https://github.com/awesome-dsh-plugin/awesome-dsh-plugin
 cd awesome-dsh-plugin
-git checkout -b add-dsh-downloader
+git checkout -b add-dshdownloader
 # create data/plugins/ollamadou__dsh-downloader.yml
 git add data/plugins/ollamadou__dsh-downloader.yml
-git commit -m "Add dsh-downloader"
-git push origin add-dsh-downloader
+git commit -m "Add dshdownloader"
+git push origin add-dshdownloader
 ```
 
 Then open a pull request against `awesome-dsh-plugin/awesome-dsh-plugin`. CI checks `dsh.bundle`, repository age, entry count and formatting; a maintainer then reads the code.

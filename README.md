@@ -1,21 +1,21 @@
 # 健壮下载器 · DSH 插件
 
-`dsh-downloader` 是一个面向 DeepSeek Harness（DSH）的下载插件：断点续传、多路合并、超时重试、国内镜像/代理预置、DeepSeek 资源发现、定时进度反馈，以及可沉淀的问题日志与主机调优。
+`dshdownloader` 是一个面向 DeepSeek Harness（DSH）的下载插件：断点续传、多路合并、超时重试、国内镜像/代理预置、DeepSeek 资源发现、定时进度反馈，以及可沉淀的问题日志与主机调优。
 
 - GitHub：`https://github.com/ollamadou/dsh-downloader`
-- npm：`dsh-downloader`（包名预留；未发布 npm 时使用 GitHub Release 的 `.tgz`）
+- npm：`dshdownloader`（包名预留；未发布 npm 时使用 GitHub Release 的 `.tgz`）
 - 插件目录：`E:\harness\downloader`
 - 本地开发环境已安装到 desktop profile，并默认启用
-- 数据目录：`C:\Users\<你>\.dsh\data\dsh-downloader`（默认；可用配置覆盖）
+- 数据目录：`C:\Users\<你>\.dsh\data\dshdownloader`（默认；可用配置覆盖）
 - 默认下载目录：当前会话工作目录下的 `downloads\`
 - 面板：左侧栏下载图标 → 中央“下载器”页面；每 1.2 秒刷新进度
 
 安装方式：
 
 ```text
-# 插件市场：搜索 dsh-downloader
+# 插件市场：搜索 dshdownloader
 # 普通 dsh web profile：
-dsh plugin --profile web add dsh-downloader
+dsh plugin --profile web add dshdownloader
 
 # 直接从 GitHub（未发布 npm 时）：
 dsh plugin --profile web add github:ollamadou/dsh-downloader
@@ -119,13 +119,13 @@ downloader_sources(action=proxies)
 
 ## 4. 配置
 
-配置写在当前 profile 的 `cordis.patch.yml` 中；插件行 id 为 `dsh-downloader`。修改后重启 DSH（或让插件重新加载）生效。
+配置写在当前 profile 的 `cordis.patch.yml` 中；插件行 id 为 `dshdownloader`。修改后重启 DSH（或让插件重新加载）生效。
 
 最小示例：
 
 ```yaml
-- id: dsh-downloader
-  name: 'dsh-downloader'
+- id: dshdownloader
+  name: 'dshdownloader'
   config:
     downloadDir: 'E:\Downloads'
     maxConnections: 8
@@ -141,7 +141,7 @@ downloader_sources(action=proxies)
 | 字段 | 默认 | 说明 |
 |---|---|---|
 | `downloadDir` | `''` | 默认下载目录；空表示 `<会话工作目录>\downloads` |
-| `dataDir` | `''` | 插件数据目录；空表示 `%USERPROFILE%\.dsh\data\dsh-downloader` |
+| `dataDir` | `''` | 插件数据目录；空表示 `%USERPROFILE%\.dsh\data\dshdownloader` |
 | `maxConnections` | `8` | 单任务最大并发连接数（1–16） |
 | `initialConnections` | `2` | 初始连接数；下载过程中按速度自适应增加 |
 | `minSegmentBytes` | `2097152` | 小于该大小或服务端不支持 Range 时用单连接 |
@@ -235,7 +235,7 @@ downloader_report(
 - 左侧栏图标：下载箭头；位置在插件/计划之后。
 - 中央面板：总速度、进行中任务、最近任务、资源预置统计、最近问题/经验。
 - 操作：暂停、继续、取消；不提供“删除文件”，避免误删。
-- 面板通过同源 `GET /dsh-downloader/state` 拉取状态，通过 `POST /dsh-downloader/action` 执行暂停/继续/取消；跨源请求会被拒绝。
+- 面板通过同源 `GET /dshdownloader/state` 拉取状态，通过 `POST /dshdownloader/action` 执行暂停/继续/取消；跨源请求会被拒绝。
 - 若页面提示“无法读取下载状态”，先确认当前页面与 DSH 同源，再刷新。
 
 ---

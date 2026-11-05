@@ -1,6 +1,6 @@
 # Security
 
-`dsh-downloader` performs network downloads and writes files to the destination chosen by the user.
+`dshdownloader` performs network downloads and writes files to the destination chosen by the user.
 
 ## What it accesses
 
@@ -8,7 +8,7 @@
 - An optional HTTP/HTTPS proxy (`proxyMode` / `proxyUrl` / per-download `proxy`).
 - The local plugin data directory: download history, learned resources, host speed profiles and the issue log.
 - The configured download directory and the explicit `dest` path.
-- The DSH Web UI's same-origin status/action endpoints under `/dsh-downloader/`.
+- The DSH Web UI's same-origin status/action endpoints under `/dshdownloader/`.
 
 ## API key handling
 

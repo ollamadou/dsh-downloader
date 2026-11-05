@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: 'dsh-downloader',
+  id: 'dshdownloader',
   factory(require) {
     const React = require('react')
     const h = React.createElement
@@ -223,7 +223,7 @@ window.__ModuleLoader__.load({
         let timer
         const load = async () => {
           try {
-            const response = await fetch('/dsh-downloader/state', { cache: 'no-store' })
+            const response = await fetch('/dshdownloader/state', { cache: 'no-store' })
             if (!response.ok) throw new Error(`HTTP ${response.status}`)
             const value = await response.json()
             if (!alive) return
@@ -245,7 +245,7 @@ window.__ModuleLoader__.load({
 
       const refresh = async () => {
         try {
-          const response = await fetch('/dsh-downloader/state', { cache: 'no-store' })
+          const response = await fetch('/dshdownloader/state', { cache: 'no-store' })
           if (response.ok) setState(await response.json())
         } catch {
           // keep the last known state
@@ -255,7 +255,7 @@ window.__ModuleLoader__.load({
       const act = async (action, id) => {
         setBusy(`${action}:${id}`)
         try {
-          const response = await fetch('/dsh-downloader/action', {
+          const response = await fetch('/dshdownloader/action', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ action, id }),
@@ -450,9 +450,9 @@ window.__ModuleLoader__.load({
       apply(ctx) {
         const t = (key) => (DownloaderPanel.__t ? DownloaderPanel.__t(key) : (DICT.zh[key] ?? key))
         if (ctx.get('locale')) {
-          ctx.effect(() => ctx.locale.register('dsh-downloader', 'zh', DICT.zh))
-          ctx.effect(() => ctx.locale.register('dsh-downloader', 'en', DICT.en))
-          const bound = ctx.locale.bind('dsh-downloader')
+          ctx.effect(() => ctx.locale.register('dshdownloader', 'zh', DICT.zh))
+          ctx.effect(() => ctx.locale.register('dshdownloader', 'en', DICT.en))
+          const bound = ctx.locale.bind('dshdownloader')
           DownloaderPanel.__t = bound
         } else {
           DownloaderPanel.__t = (key) => DICT.zh[key] ?? key
@@ -461,7 +461,7 @@ window.__ModuleLoader__.load({
           ctx.slots.register(
             {
               name: 'sidebar.panellist',
-              id: 'dsh-downloader',
+              id: 'dshdownloader',
               order: 20,
               label: () => t('panel.title'),
             },
@@ -472,7 +472,7 @@ window.__ModuleLoader__.load({
           ctx.slots.register(
             {
               name: 'main',
-              key: 'dsh-downloader',
+              key: 'dshdownloader',
             },
             DownloaderPanel,
           ),

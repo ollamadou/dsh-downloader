@@ -1,6 +1,6 @@
 - insert:
-    - id: dsh-downloader
-      name: 'dsh-downloader'
+    - id: dshdownloader
+      name: 'dshdownloader'
       # All fields are optional; the plugin merges these over its own defaults.
       config:
         downloadDir: ''
