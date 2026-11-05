@@ -1,6 +1,6 @@
-{
+﻿{
   "name": "dshdownloader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Resumable multi-connection downloader with China mirror and proxy presets, plus DeepSeek-assisted resource discovery for DeepSeek Harness.",
   "type": "module",
   "license": "MIT",

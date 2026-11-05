@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-11-05
+
+- Renamed the package and plugin id from `dsh-downloader` to `dshdownloader` to avoid confusion with an unrelated community package.
+- Web panel routes moved to `/dshdownloader/state` and `/dshdownloader/action`.
+- Data directory moved to `~/.dsh/data/dshdownloader` (the old `dsh-downloader` directory is not migrated automatically).
+
 ## 0.1.0 — 2026-11-04
 
 - Initial release.
